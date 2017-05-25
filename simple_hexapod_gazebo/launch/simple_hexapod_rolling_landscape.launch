@@ -1,0 +1,22 @@
+<launch>
+
+
+  <include file="$(find hector_gazebo_worlds)/launch/rolling_landscape_120m.launch">
+    <!--<arg name="world_name" value="worlds/rolling_landscape_120m.world"/>
+    <arg name="paused" value="true"/>-->
+  </include>
+  
+   <param name="robot_description" textfile="$(find simple_hexapod_description)/urdf/simple_hexapod.urdf" />  
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find simple_hexapod_description)/urdf/simple_hexapod.urdf -urdf -model simple_hexapod -z 1.5" />
+
+
+
+ 
+ <include file="$(find simple_hexapod_control)/launch/simple_hexapod_control.launch"/> 
+
+
+  <node name="simple_hexapod_walker" pkg="simple_hexapod_gazebo" type="walker.py" />
+
+
+
+</launch>
