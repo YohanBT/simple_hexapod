@@ -5,6 +5,7 @@
 <xacro:property name="thigh_offset_x" value="0" />
 <xacro:property name="thigh_offset_y" value="-0.0645" />
 <xacro:property name="thigh_offset_z" value="-0.0145" />
+<xacro:property name="camera_link" value="0.05" /> <!-- Size of square 'camera' box -->
 
 
 
@@ -63,6 +64,8 @@
     <xacro:leg_l xyz="0.1248 0.06164  0.001116"  rpy="0 4.7123 2.356194490192345" suffix="lf"/>
     <xacro:leg_l xyz="0 0.1034  0.001116"  rpy="0 4.7123 3.14159" suffix="lm"/>
     <xacro:leg_l xyz="-0.1248 0.06164  0.001116"  rpy="0 4.7123 3.9269908169872414" suffix="lr"/>
+
+    
 
 </xacro:macro>
 
@@ -314,9 +317,5 @@
 
   
 </xacro:macro>
-
-
-
-
 
 </robot>
