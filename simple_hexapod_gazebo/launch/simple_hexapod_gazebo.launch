@@ -6,12 +6,16 @@
     <arg name="paused" value="true"/>
   </include>
   
-   <param name="robot_description" textfile="$(find simple_hexapod_description)/urdf/simple_hexapod.urdf" />  
-  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find simple_hexapod_description)/urdf/simple_hexapod.urdf -urdf -model simple_hexapod -z 0.2" />
+   <!--<param name="robot_description" textfile="$(find simple_hexapod_description)/urdf/simple_hexapod.urdf" />  
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find simple_hexapod_description)/urdf/simple_hexapod.urdf -urdf -model simple_hexapod -z 0.2" />-->
 
+  <!--Load the robot model -->
+  <param name="robot_description" command="$(find xacro)/xacro '$(find simple_hexapod_description)/urdf/simple_hexapod.xacro'" />
 
+  <!-- spawn the robot model -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
+	      args="-urdf -model -param robot_description -x 0 -y 0 -z 1.0" />
 
- 
  <include file="$(find simple_hexapod_control)/launch/simple_hexapod_control.launch"/> 
 
 
