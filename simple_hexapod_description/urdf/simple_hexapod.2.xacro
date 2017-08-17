@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<robot name="Simple_Hexapod"  xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="Simple_Hexapod2"  xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <xacro:include filename="$(find simple_hexapod_description)/urdf/simple_hexapod_urdf.xacro" />
   <xacro:include filename="$(find simple_hexapod_description)/urdf/sensor_urdf/asus_camera.urdf.xacro" />
